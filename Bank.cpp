@@ -17,7 +17,7 @@ Account* Bank::getAccount(int num, string password)
     Account* userAccount = NULL;
     if (myAccounts.size() > num)
     {
-        userAccount = (Account*)myAccounts[num];
+        userAccount = static_cast<Account*>(myAccounts[num]);
     }
     if ((userAccount != NULL) && (password.compare(userAccount->getPassword()) != 0))
     {
